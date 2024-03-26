@@ -1,4 +1,5 @@
 <template>
+  <p>{{ email }}</p>
   <p v-if="esta_trabalhando">Estou trabalhando no momento</p>
   <p v-else>Nao estou trabalhando</p>
   <p v-if="1 > 2">teste</p>
@@ -25,10 +26,12 @@
 <script>
 export default {
   name: "info",
+  props: {
+    email: String,
+    esta_trabalhando: Boolean,
+  },
   data() {
     return {
-      esta_trabalhando: false,
-      email: "helyssonspt.lnx@gmail.com",
       mostrar_email: false,
       textButton: "Mostrat Email",
       Tec_Front: ["Html", "Css", "React"],
